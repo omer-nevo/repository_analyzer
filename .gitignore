@@ -1,0 +1,17 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# virtual environments
+venv/
+
+# sensitive environment files
+.env
+
+# configuration files with sensitive data
+config.yaml
+
+# Ignore JetBrains IDE settings
+.idea/
+
