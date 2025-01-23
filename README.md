@@ -8,7 +8,7 @@ A Python-based repository analysis tool leveraging OpenAI Assistant API for code
 
 ### Clone the repository:
 ```bash
-git clone <repo_url>
+git clone https://github.com/omer-nevo/repository_analyzer.git
 cd repository_analyzer
 ```
 
@@ -27,6 +27,31 @@ pip install -r requirements.txt
 ## Usage
 
 ## Design decisions
+
+Chose the example project structure for clarity and maintainability.
+
+API Framework - Flask:
+- Familiar framework
+- Uses REST API
+- Simple and lightweight implementation
+
+Vector Database - FAISS:
+- Local storage
+- Fast similarity search
+- No external API calls (unlike Pinecone)
+- Efficient performance
+
+Embedding Model - text-embedding-3-small:
+- Cost-effective
+- Strong performance
+- Outperforms text-embedding-ada-002 (per OpenAI)
+
+Text Chunking - Chunk Size 500
+- Good trade-off between completeness and efficiency 
+- Compatible with FAISS
+- Matches typical function sizes in code bases
+Initially considered CintraAI Code Chunker
+Time constraints led to fixed 500-token approach
 
 ## Performance considerations
 
