@@ -1,0 +1,9 @@
+openai_api_key: "Your key goes here"
+
+vector_db:
+  embedding_dim: 1536
+  chunk_size: 500
+
+rate_limiter:
+  max_rate: 10
+  time_period: 1
