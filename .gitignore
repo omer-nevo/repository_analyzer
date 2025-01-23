@@ -15,3 +15,5 @@ config.yaml
 # JetBrains IDE settings
 .idea/
 
+#Faiss index
+vectorstore.index
