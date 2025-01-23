@@ -26,6 +26,26 @@ pip install -r requirements.txt
 
 ## Usage
 
+### Run the Flask API
+```bash
+flask run --host=0.0.0.0 --port=5000
+```
+
+### Call API Endpoints
+Test the API using **cURL** or **Postman**.
+
+#### **List Repository Files**
+```bash
+curl -X GET "http://127.0.0.1:5000/list_files"
+```
+
+#### **Query Code Context**
+```bash
+curl -X POST "http://127.0.0.1:5000/query" -H "Content-Type: application/json" -d '{"query": "How does authentication work?"}'
+```
+
+---
+
 ## Design decisions
 
 Chose the example project structure for clarity and maintainability.
@@ -53,9 +73,25 @@ Text Chunking - Chunk Size 500
 Initially considered CintraAI Code Chunker
 Time constraints led to fixed 500-token approach
 
+Context-Aware Querying: Uses OpenAI’s embeddings to analyze code.
+
 ## Performance considerations
 
+Uses batch processing for indexing repositories efficiently.
+Implements rate limiting (AsyncLimiter) to handle OpenAI API calls.
+Supports async execution (asyncio) for non-blocking operations.
+
 ## Future improvements
+
+The current implementation does not work fluently yet and lacks some features required:
+
+1. API Enhancements
+The API is still in its basic form and requires further development.
+Implement authentication and authorization mechanisms for security.
+2. Smarter File Handling & Chunking
+Currently, the repository does not handle various file types and encodings.
+3. Assistant & Vector Database Integration
+The Assistant can generate its own code snippets, but it is not yet integrated with the vector database to retrieve relevant code from indexed files.
 
 ## Contributing
 
