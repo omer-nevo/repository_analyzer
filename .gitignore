@@ -12,6 +12,6 @@ venv/
 # configuration files with sensitive data
 config.yaml
 
-# Ignore JetBrains IDE settings
+# JetBrains IDE settings
 .idea/
 
